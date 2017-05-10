@@ -1,19 +1,11 @@
-@import "../modules/nav";
-@import "../modules/products";
-@import "../layout/layout";
-// @import "../state/";
-
-$primary-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
 body {
-  font-family: $primary-font;
   margin: 0;
   padding: 0;
-  background-color: #f5f8fa;
 }
 
 .site {
-  display: flex; // Sticky Footer
-  min-height: 100vh; // Sticky Footer
-  flex-direction: column; // Sticky Footer
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #FFFBD0;
 }

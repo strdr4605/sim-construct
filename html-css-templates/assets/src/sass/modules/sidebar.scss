@@ -1,0 +1,48 @@
+@import "../layout/layout";
+
+.categories {
+  margin-top: 10px;
+  margin-right: 10px;
+
+  .list-group-item {
+    border-color: $secondary-color;
+    // border-top: 1px dashed $secondary-color;
+  }
+
+  .active-cat {
+    background-color: lightgray;
+    color: $secondary-color;
+  }
+
+  .selected-cat {
+    background-color: $primary-color;
+    color: $secondary-color;
+    border-color: $secondary-color;
+  }
+
+  .title {
+    background-color: $secondary-color;
+    color: $primary-color;
+    font-size: 16px;
+    height: 115%;
+    display: flex;
+
+    #menu-icon  {
+
+      margin-top: 2px;
+
+      div {
+        width: 17px;
+        height: 2px;
+        background-color: $primary-color;
+        margin: 2px 0;
+        border-radius: 1px;
+      }
+    }
+
+    #title {
+      margin-left: 20px;
+    }
+
+  }
+}

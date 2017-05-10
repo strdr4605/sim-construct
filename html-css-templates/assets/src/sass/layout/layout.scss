@@ -1,29 +1,35 @@
-$primary-color: #fff;
-$header-footer-height: 47px;
-$content-size-percentage: 86%;
+$primary-color: #F0D43A;
+$secondary-color: #cc3300;
+$header-footer-height: 70px;
 
 #header {
-  background-color: $primary-color;
+  // background-color: $primary-color;
   top: 0;
   height: $header-footer-height;
   width: auto;
-  position: relative;
-  box-shadow: 0 1px 1px #888888;
+  box-shadow: 0 1px 1px $secondary-color;
+  color: $secondary-color;
+  z-index: 1;
 }
 
 #main {
-  flex: 1; // Sticky Footer
+  flex: 1;
   display: flex;
   flex-flow: row;
+  margin: auto;
 }
 
+#sidebar {
+  flex-basis: 25%;
+  order: 1;
+  // background-color: #22B2DA;
+}
+
+
 #content {
-  background-color: #fff;
-  flex-basis: $content-size-percentage;
-  margin: 10px auto;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
+  // background-color: #2D4059;
+  flex-basis: 75%;
+  order: 2;
 }
 
 #footer {
@@ -33,18 +39,7 @@ $content-size-percentage: 86%;
   width: auto;
   height: $header-footer-height;
   clear: left;
-  box-shadow: 0 -1px 1px #888888;
-  span {
-    position: absolute;
-    right: (100% - $content-size-percentage) / 2;
-    top: 15px;
-    font-size: 17px;
-    color: #66757f;
-  }
-}
-
-#logo {
-  position: absolute;
-  left: (100% - $content-size-percentage) / 2;
-  margin: 10px 10px;
+  width: 100%;
+  box-shadow: 0 -1px 1px $secondary-color;
+  color: $secondary-color;
 }

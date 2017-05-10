@@ -1,21 +1,29 @@
 $(document).ready(function(){
-    $('.product').click(function(event){
-      event.stopPropagation()
-      $product = $(this).html()
-      $('.zoom-product')
-        .addClass('display-flex')
-        .removeClass('hidden')
-        .html($product).children('img').addClass('zoom-image')
-    })
+  $(".category").mouseover(function(){
+    $(this).addClass("active-cat")
+  });
+  $(".category").mouseout(function(){
+    $(this).removeClass("active-cat")
+  });
+  $(".category").click(function(){
+    $(".category").removeClass("selected-cat");
+    $(this).addClass("selected-cat");
+  });
 
-    $('.zoom-product').click(function (event) {
-      event.stopPropagation()
-    })
+  $("#contacte").mouseover(function(){
+    $(this).addClass("active-cont")
+  });
+  $("#contacte").mouseout(function(){
+    $(this).removeClass("active-cont")
+  });
 
-    $('body').click(function () {
-      $('.display-flex')
-        .addClass('hidden')
-        .removeClass('display-flex')
-        .html('')
-    })
+  $(".product").mouseover(function(){
+    $(this).addClass("active-prod")
+  });
+  $(".product").mouseout(function(){
+    $(this).removeClass("active-prod")
+  });
+
+  var cw = $('.product-image').width() * 0.6;
+  $('.product-image').css({'height':cw+'px'});
 })
