@@ -17,6 +17,17 @@ router.get('/getAllProducts', (req, res) => {
   })
 })
 
+router.get('/findByCategoryId/:categoryId', (req, res) => {
+  let categoryId = req.params.categoryId
+  Product.find({categoryId: categoryId}, (err, doc) => {
+    if (err) {
+      res.json(err)
+    } else {
+      res.json(doc)
+    }
+  })
+})
+
 // End GET Section
 
 // Start POST Section
