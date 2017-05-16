@@ -4,6 +4,7 @@ const express = require('express'),
       mongoose = require('mongoose'),
       bodyParser = require('body-parser')
       categoryRoutes = require('./routes/categories')
+      productRoutes = require('./routes/products')
 
 app.use(bodyParser.urlencoded({
     extended: false
@@ -16,6 +17,8 @@ mongoose.connect(config.database, (err) => {
 mongoose.Promise = global.Promise
 
 app.use('/api/v1/category', categoryRoutes)
+app.use('/api/v1/product', productRoutes)
+
 
 app.get('/', (req, res) => {
   res.send({message: 'Hi'})
