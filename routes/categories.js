@@ -25,7 +25,7 @@ router.post('/newCategory', (req, res) => {
   let newCategory = Category(req.body)
   newCategory.save((err) => {
     if (err) throw err
-    res.send({message: "new Category created"})
+    res.send({message: 'new Category created'})
   })
 })
 
