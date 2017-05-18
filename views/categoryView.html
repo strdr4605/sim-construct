@@ -3,12 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Adding Category</title>
+	<style media="screen">
+		form {
+			display: flex;
+			flex-direction: column;
+			width: 500px;
+		}
+
+		form .form-items {
+			margin-bottom: 20px;
+		}
+	</style>
 </head>
 <body>
 	<form id="categoryForm" method="post">
-		<input type="text" name="nameRo", value="nameRo"/>
-		<input type="text" name="nameRu", value="nameRu"/>
-		<input type="submit" name="submit" value="Create Category"/>
+		<input class="form-items" type="text" name="nameRo", placeholder="nameRo"/>
+		<input class="form-items" type="text" name="nameRu", placeholder="nameRu"/>
+		<input class="form-items" type="submit" name="submit" value="Create Category"/>
 	</form>
 </body>
 </html>

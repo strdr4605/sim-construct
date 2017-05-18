@@ -3,23 +3,33 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Adding Products</title>
+	<style media="screen">
+		form {
+			display: flex;
+			flex-direction: column;
+			width: 500px;
+		}
 
+		form .form-items {
+			margin-bottom: 20px;
+		}
+	</style>
 </head>
 <body>
 	<form id="uploadForm" enctype="multipart/form-data" method="post">
-		<input type="text" name="nameRo", placeholder="nameRo"/>
-		<input type="text" name="nameRu", placeholder="nameRu"/>
-		<input type="text" name="price", placeholder="price"/>
-		<textarea name="descriptionRo", placeholder="descriptionRo" rows="4" cols="50">
+		<input class="form-items" type="text" name="nameRo", placeholder="nameRo"/>
+		<input class="form-items" type="text" name="nameRu", placeholder="nameRu"/>
+		<input class="form-items" type="text" name="price", placeholder="price"/>
+		<textarea class="form-items" name="descriptionRo", placeholder="descriptionRo" rows="4" cols="50">
 		</textarea>
-		<textarea name="descriptionRu", placeholder="descriptionRu" rows="4" cols="50">
+		<textarea class="form-items" name="descriptionRu", placeholder="descriptionRu" rows="4" cols="50">
 		</textarea>
-		<input type="text" name="unitRo", placeholder="unitRo"/>
-		<input type="text" name="unitRu", placeholder="unitRu"/>
-		<select id="allCategories" name="categoryId">
+		<input class="form-items" type="text" name="unitRo", placeholder="unitRo"/>
+		<input class="form-items" type="text" name="unitRu", placeholder="unitRu"/>
+		<select class="form-items" id="allCategories" name="categoryId">
 		</select>
-		<input type="file" name="userFile"/>
-		<input type="submit" name="submit" value="Create Product"/>
+		<input class="form-items" type="file" name="userFile"/>
+		<input class="form-items" type="submit" name="submit" value="Create Product"/>
 	</form>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
