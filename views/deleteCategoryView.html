@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Deleting Category</title>
+	<style media="screen">
+		form {
+			display: flex;
+			flex-direction: column;
+			width: 500px;
+		}
+
+		form .form-items {
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<form id="categoryForm" method="post">
+		<select class="form-items" id="allCategories" name="categoryId">
+		</select>
+		<input class="form-items" type="submit" name="submit" value="Delete Category"/>
+	</form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$.getJSON("getAllCategories", null, function(data) {
+		$("#allCategories option").remove() // Remove all <option> child tags.
+		$.each(data, function(index, item) { // Iterates through a collection
+				$("#allCategories").append( // Append an object to the inside of the select box
+						$("<option></option>") // Yes you can do this.
+								.text(item.nameRo +  ' ' + item.nameRu)
+								.val(item._id)
+				)
+		})
+	})
+</script>
+</html>

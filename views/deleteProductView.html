@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Adding Category</title>
+	<style media="screen">
+		form {
+			display: flex;
+			flex-direction: column;
+			width: 500px;
+		}
+
+		form .form-items {
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<form id="productForm" method="post">
+		<select class="form-items" id="allProducts" name="productId">
+		</select>
+		<input class="form-items" type="submit" name="submit" value="Delete Product"/>
+	</form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$.getJSON("getAllProducts", null, function(data) {
+		$("#allProducts option").remove() // Remove all <option> child tags.
+		$.each(data, function(index, item) { // Iterates through a collection
+			let infoText = ''
+			for(let key in item) {
+				if (key != '_id' && key != '__v') infoText += key+ ': ' + item[key] + ' '
+			}
+				$("#allProducts").append( // Append an object to the inside of the select box
+						$("<option></option>") // Yes you can do this.
+								.text(infoText)
+								.val(item._id)
+				)
+		})
+	})
+</script>
+</html>

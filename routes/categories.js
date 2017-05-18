@@ -25,8 +25,16 @@ router.post('/newCategory', (req, res) => {
   let newCategory = Category(req.body)
   newCategory.save((err) => {
     if (err) throw err
-    res.send({message: 'new Category created'})
+    res.sendFile(path.resolve('views/newCategoryView.html'))
   })
+})
+
+router.post('/deleteCategory', (req, res) => {
+  let categoryToDeleteId = req.body.categoryId
+  Category.remove({ _id: categoryToDeleteId}, (err, doc) => {
+    console.log(doc);
+  });
+  res.json({success: true})
 })
 
 // End POST Section

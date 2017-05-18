@@ -69,10 +69,20 @@ router.post('/newProduct', (req, res) => {
       if (err) throw err
     })
 
-		res.sendFile(path.resolve('views/productView.html'))
+		res.sendFile(path.resolve('views/newProductView.html'))
     imageUrl = 'public/images'
 	})
 })
+
+router.post('/deleteProduct', (req, res) => {
+  let productToDeleteId = req.body.productId
+  Product.remove({ _id: productToDeleteId}, (err, doc) => {
+    console.log(doc);
+  });
+  res.json({success: true})
+})
+
+
 // End POST Section
 
 module.exports = router

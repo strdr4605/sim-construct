@@ -16,7 +16,7 @@
 	</style>
 </head>
 <body>
-	<form id="uploadForm" enctype="multipart/form-data" method="post">
+	<form id="productForm" enctype="multipart/form-data" method="post">
 		<input class="form-items" type="text" name="nameRo", placeholder="nameRo"/>
 		<input class="form-items" type="text" name="nameRu", placeholder="nameRu"/>
 		<input class="form-items" type="text" name="price", placeholder="price"/>
@@ -36,14 +36,14 @@
 <script type="text/javascript">
 	$('textarea').val('')
 	$.getJSON("../category/getAllCategories", null, function(data) {
-		$("#allCategories option").remove(); // Remove all <option> child tags.
+		$("#allCategories option").remove() // Remove all <option> child tags.
 		$.each(data, function(index, item) { // Iterates through a collection
 				$("#allCategories").append( // Append an object to the inside of the select box
 						$("<option></option>") // Yes you can do this.
 								.text(item.nameRo +  ' ' + item.nameRu)
 								.val(item._id)
-				);
-		});
-	});
+				)
+		})
+	})
 </script>
 </html>

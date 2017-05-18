@@ -27,10 +27,16 @@ app.get('/', (req, res) => {
   res.send({message: 'Hi'})
 })
 app.get('/api/v1/product/newProduct', function(req, res) {
-    res.sendFile('views/productView.html', {root: __dirname })
+    res.sendFile('views/newProductView.html', {root: __dirname })
 });
 app.get('/api/v1/category/newCategory', function(req, res) {
-    res.sendFile('views/categoryView.html', {root: __dirname })
+    res.sendFile('views/newCategoryView.html', {root: __dirname })
+});
+app.get('/api/v1/product/deleteProduct', function(req, res) {
+    res.sendFile('views/deleteProductView.html', {root: __dirname })
+});
+app.get('/api/v1/category/deleteCategory', function(req, res) {
+    res.sendFile('views/deleteCategoryView.html', {root: __dirname })
 });
 
 
