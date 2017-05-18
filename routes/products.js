@@ -46,16 +46,6 @@ router.get('/findByCategoryId/:categoryId', (req, res) => {
 // Start POST Section
 
 router.post('/newProduct', (req, res) => {
-  let reqProd = req.body
-  let newProduct = Product(reqProd)
-  newProduct.save((err) => {
-    if (err) throw err
-    res.send({message: "new Product created"})
-  })
-})
-
-
-router.post('/uploadImage', (req, res) => {
   var upload = multer({
     storage: storage,
     fileFilter: (req, file, cb) => {
@@ -72,15 +62,14 @@ router.post('/uploadImage', (req, res) => {
 
     let reqProd = req.body
     reqProd.price = parseFloat(reqProd.price)
-    reqProd.imageUrl = imageUrl
-    delete reqProd.submit
+    reqProd.imageUrl = imageUrl == 'public/images' ? 'public/images/no-image.png' : imageUrl
     console.log(reqProd)
     let newProduct = Product(reqProd)
     newProduct.save((err) => {
       if (err) throw err
     })
 
-		res.send('File is uploaded, new Product created')
+		res.sendFile(path.resolve('views/productView.html'))
     imageUrl = 'public/images'
 	})
 })

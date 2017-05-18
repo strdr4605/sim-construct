@@ -18,12 +18,20 @@ mongoose.Promise = global.Promise
 
 app.use('/api/v1/category', categoryRoutes)
 app.use('/api/v1/product', productRoutes)
-app.use('/api/v1/product/uploadImage', express.static('views/'))
+// app.use('/api/v1/product/uploadImage', express.static('views'))
+
+// app.use('/api/v1/category/newCategory', express.static('views/categoryView'))
 app.use('/public', express.static('public/'))
 
 app.get('/', (req, res) => {
   res.send({message: 'Hi'})
 })
+app.get('/api/v1/product/newProduct', function(req, res) {
+    res.sendFile('views/productView.html', {root: __dirname })
+});
+app.get('/api/v1/category/newCategory', function(req, res) {
+    res.sendFile('views/categoryView.html', {root: __dirname })
+});
 
 
 
