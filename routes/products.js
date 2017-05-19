@@ -100,9 +100,9 @@ router.post('/deleteProduct', (req, res) => {
     console.log(doc)
   })
 
-  // Product.remove({ _id: productToDeleteId}, (err, doc) => {
-  //   console.log(doc);
-  // })
+  Product.remove({ _id: productToDeleteId}, (err, doc) => {
+    console.log(doc);
+  })
   res.json({success: true})
 })
 
