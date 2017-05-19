@@ -87,23 +87,22 @@ router.post('/newProduct', (req, res) => {
 
 router.post('/deleteProduct', (req, res) => {
   let productToDeleteId = req.body.productId
-  Product.findOne({ _id: productToDeleteId}, function (err, doc){
+  Product.findOne({ '_id': productToDeleteId}, (err, doc) => {
+    if (err) throw  error
     let imageToDelete = doc.imageUrl
     if (imageToDelete != 'public/images/no-image.png') {
       fs.unlink(imageToDelete, (err) => {
-        if (err) throw err;
-        console.log('successfully deleted' + imageUrl);
+        if (err) throw err
+        console.log('successfully deleted file ' + imageToDelete)
       })
     } else {
       console.log('public/images/no-image.png ' + 'not deletable')
     }
-    console.log(doc)
+    Product.remove({ _id: productToDeleteId}, (err, doc) => {
+      if (err) throw err
+    })
   })
-
-  Product.remove({ _id: productToDeleteId}, (err, doc) => {
-    console.log(doc);
-  })
-  res.json({success: true})
+  res.sendFile(path.resolve('views/deleteProductView.html'))
 })
 
 

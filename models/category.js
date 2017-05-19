@@ -7,16 +7,16 @@ var CategoryScheme = new Schema({
   nameRo: {
     type: String,
     required: true,
-    // index: {
-    //   unique: true
-    // }
+    index: {
+      unique: true
+    }
   },
   nameRu: {
     type: String,
     required: true,
-    // index: {
-    //   unique: true
-    // }
+    index: {
+      unique: true
+    }
   },
   createdAt: {
     type: Date,
