@@ -37,8 +37,8 @@ router.post('/newCategory', (req, res) => {
       if (err) console.error(err)
       else console.log('pow!')
     })
-    res.sendFile(path.resolve('views/newCategoryView.html'))
   })
+  res.json({'message': 'Succesufully createad Category'})
 })
 
 router.post('/deleteCategory', (req, res) => {

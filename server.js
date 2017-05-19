@@ -21,23 +21,23 @@ app.use('/api/v1/product', productRoutes)
 // app.use('/api/v1/product/uploadImage', express.static('views'))
 
 // app.use('/api/v1/category/newCategory', express.static('views/categoryView'))
-app.use('/public', express.static('public/'))
+app.use('/public', express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
   res.send({message: 'Hi'})
 })
 app.get('/api/v1/product/newProduct', function(req, res) {
     res.sendFile('views/newProductView.html', {root: __dirname })
-});
+})
 app.get('/api/v1/category/newCategory', function(req, res) {
     res.sendFile('views/newCategoryView.html', {root: __dirname })
-});
+})
 app.get('/api/v1/product/deleteProduct', function(req, res) {
     res.sendFile('views/deleteProductView.html', {root: __dirname })
-});
+})
 app.get('/api/v1/category/deleteCategory', function(req, res) {
     res.sendFile('views/deleteCategoryView.html', {root: __dirname })
-});
+})
 
 
 

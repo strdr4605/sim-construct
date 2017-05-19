@@ -80,7 +80,7 @@ router.post('/newProduct', (req, res) => {
       if (err) throw err
     })
 
-		res.sendFile(path.resolve('views/newProductView.html'))
+		res.json({'message': 'Succesufully created Product'})
     imageUrl = 'public/images/'
 	})
 })
@@ -102,7 +102,7 @@ router.post('/deleteProduct', (req, res) => {
       if (err) throw err
     })
   })
-  res.sendFile(path.resolve('views/deleteProductView.html'))
+  res.json({success: true})
 })
 
 
