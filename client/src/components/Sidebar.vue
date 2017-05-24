@@ -13,18 +13,26 @@
         </div>
       </div>
       <div class="list-group-item category">Instrumente</div>
-      <div class="list-group-item category">Tehnica sanitară</div>
-      <div class="list-group-item category">Instrumente de finisare</div>
-      <div class="list-group-item category">Materiale de finisare</div>
-      <div class="list-group-item category">Vopsele si lacuri</div>
-      <div class="list-group-item category">Bunuri electrice</div>
-      <div class="list-group-item category">Instrumente auxiliare</div>
+      <div v-for="category in getAllCategoriesGetter" class="list-group-item category"> {{ category.nameRo }} </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
+
+  computed: mapGetters([
+    'getAllCategoriesGetter'
+  ]),
+  methods: mapActions([
+    'getAllCategoriesAction'
+  ]),
+  mounted () {
+    this.getAllCategoriesAction()
+  }
+
 }
 </script>
 
