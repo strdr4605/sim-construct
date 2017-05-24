@@ -1,0 +1,39 @@
+#header {
+  top: 0;
+  height: 70px;
+  width: auto;
+  box-shadow: 0 1px 1px #cc3300;
+  color: #cc3300;
+  z-index: 1; }
+
+#main {
+  -ms-flex: 1;
+  flex: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  margin: auto; }
+
+#sidebar {
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  -ms-flex-order: 1;
+  order: 1; }
+
+#content {
+  -ms-flex-preferred-size: 75%;
+  flex-basis: 75%;
+  -ms-flex-order: 2;
+  order: 2; }
+
+#footer {
+  background-color: #F0D43A;
+  position: relative;
+  bottom: 0;
+  width: auto;
+  height: 70px;
+  clear: left;
+  width: 100%;
+  box-shadow: 0 -1px 1px #cc3300;
+  color: #cc3300; }

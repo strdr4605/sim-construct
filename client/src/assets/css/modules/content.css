@@ -1,0 +1,104 @@
+#header {
+  top: 0;
+  height: 70px;
+  width: auto;
+  box-shadow: 0 1px 1px #cc3300;
+  color: #cc3300;
+  z-index: 1; }
+
+#main {
+  -ms-flex: 1;
+  flex: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  margin: auto; }
+
+#sidebar {
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  -ms-flex-order: 1;
+  order: 1; }
+
+#content {
+  -ms-flex-preferred-size: 75%;
+  flex-basis: 75%;
+  -ms-flex-order: 2;
+  order: 2; }
+
+#footer {
+  background-color: #F0D43A;
+  position: relative;
+  bottom: 0;
+  width: auto;
+  height: 70px;
+  clear: left;
+  width: 100%;
+  box-shadow: 0 -1px 1px #cc3300;
+  color: #cc3300; }
+
+#content {
+  background-color: #F0D43A;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row;
+  flex-flow: row; }
+  #content ul {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    #content ul li {
+      width: 33%;
+      margin: 1px; }
+  #content .active-prod li {
+    display: list-item !important; }
+  #content .active-prod img {
+    width: 150px !important;
+    height: 150px !important; }
+  #content .products {
+    width: 100%; }
+  #content .product {
+    border: 1px solid #cc3300;
+    position: relative;
+    border-radius: 2px; }
+    #content .product .product-image {
+      background-color: white;
+      height: 30%;
+      text-align: center; }
+      #content .product .product-image .helper {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle; }
+      #content .product .product-image img {
+        width: 100px;
+        height: 100px;
+        margin-left: auto;
+        /* For Safari 3.1 to 6.0 */
+        transition: width 300ms, height 300ms; }
+    #content .product .product-info {
+      background-color: #cc3300;
+      color: #F0D43A; }
+      #content .product .product-info .product-description {
+        position: absolute;
+        z-index: 5;
+        background-color: #cc3300; }
+        #content .product .product-info .product-description ul {
+          list-style: none;
+          padding-left: 0; }
+          #content .product .product-info .product-description ul li {
+            display: none;
+            width: 100%; }
