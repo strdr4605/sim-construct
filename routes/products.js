@@ -80,7 +80,7 @@ router.post('/newProduct', (req, res) => {
       if (err) throw err
     })
 
-		res.json({'message': 'Succesufully created Product'})
+		res.send('Succesufully created Product')
     imageUrl = 'public/images/'
 	})
 })
@@ -102,7 +102,7 @@ router.post('/deleteProduct', (req, res) => {
       if (err) throw err
     })
   })
-  res.json({success: true})
+  res.send('success deletion')
 })
 
 

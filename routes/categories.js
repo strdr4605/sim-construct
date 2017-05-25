@@ -38,7 +38,7 @@ router.post('/newCategory', (req, res) => {
       else console.log('pow!')
     })
   })
-  res.json({'message': 'Succesufully createad Category'})
+  res.send('Succesufully createad Category')
 })
 
 router.post('/deleteCategory', (req, res) => {
@@ -52,7 +52,7 @@ router.post('/deleteCategory', (req, res) => {
   Category.remove({ _id: categoryToDeleteId}, (err, doc) => {
     console.log(doc);
   });
-  res.json({success: true})
+  res.send('success deletion')
 })
 
 // End POST Section

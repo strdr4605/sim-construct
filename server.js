@@ -2,10 +2,12 @@ const express = require('express'),
       app = express(),
       config = require('./config'),
       mongoose = require('mongoose'),
-      bodyParser = require('body-parser')
-      categoryRoutes = require('./routes/categories')
-      productRoutes = require('./routes/products')
+      bodyParser = require('body-parser'),
+      categoryRoutes = require('./routes/categories'),
+      productRoutes = require('./routes/products'),
+      cors = require('cors')
 
+app.use(cors())
 app.use(bodyParser.urlencoded({
     extended: false
 }))

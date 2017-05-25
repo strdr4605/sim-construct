@@ -19,6 +19,7 @@
   "homepage": "https://github.com/strdr4605/sim-construct#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "cors": "^2.8.3",
     "express": "^4.14.0",
     "fs": "0.0.1-security",
     "mkdirp": "^0.5.1",
