@@ -5,6 +5,7 @@ import store from './vuex/store'
 import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import router from './router'
+
 import './assets/css/base/style.css'
 import './assets/css/layout/layout.css'
 import './assets/css/modules/header.css'
@@ -12,6 +13,7 @@ import './assets/css/modules/content.css'
 import './assets/css/modules/sidebar.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import './assets/js/my-scripts'
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
