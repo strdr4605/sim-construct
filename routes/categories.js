@@ -17,7 +17,7 @@ router.get('/getAllCategories', (req, res) => {
     } else {
       res.json(doc)
     }
-  })
+  }).sort({createdAt: -1})
 })
 
 // End GET Section

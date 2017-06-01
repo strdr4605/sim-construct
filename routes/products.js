@@ -19,7 +19,7 @@ router.get('/getAllProducts', (req, res) => {
     } else {
       res.json(doc)
     }
-  })
+  }).sort({createdAt: -1})
 })
 
 router.get('/findByCategoryId/:categoryId', (req, res) => {
@@ -30,7 +30,7 @@ router.get('/findByCategoryId/:categoryId', (req, res) => {
     } else {
       res.json(doc)
     }
-  })
+  }).sort({createdAt: -1})
 })
 
 // End GET Section
