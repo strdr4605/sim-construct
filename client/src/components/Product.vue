@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="product">
     <div class="product-image">
-      <span class="helper"></span><img src="assets/dist/images/cleste.png" alt="">
+      <span class="helper"></span><img src="../assets/images/cleste.png" alt="">
     </div>
     <div class="product-info">
       <div class="product-price">
