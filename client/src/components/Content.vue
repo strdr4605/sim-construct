@@ -1,16 +1,12 @@
 <template lang="html">
   <div id="content">
-    <my-products></my-products>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import MyProducts from './Products'
 
 export default {
-  components: {
-    MyProducts
-  }
 }
 </script>
 
