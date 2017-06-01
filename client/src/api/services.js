@@ -9,7 +9,30 @@ export function getAllCategoriesService () {
         reject(er)
       }
       let list = JSON.parse(body)
-      console.log(list)
+      resolve(list)
+    })
+  })
+}
+
+export function getAllProductsService () {
+  return new Promise((resolve, reject) => {
+    request(apiUrl + 'api/v1/product/getAllProducts', (er, response, body) => {
+      if (er) {
+        reject(er)
+      }
+      let list = JSON.parse(body)
+      resolve(list)
+    })
+  })
+}
+
+export function findProductsByCategoryIdService (categoryId) {
+  return new Promise((resolve, reject) => {
+    request(apiUrl + 'api/v1/product/findByCategoryId/' + categoryId, (er, response, body) => {
+      if (er) {
+        reject(er)
+      }
+      let list = JSON.parse(body)
       resolve(list)
     })
   })
