@@ -12,7 +12,7 @@
           Categorii
         </div>
       </div>
-      <div class="list-group-item category">Instrumente</div>
+      <div class="list-group-item category" @click="getAllProductsAction">Toate Produsele</div>
       <div v-for="category in getAllCategoriesGetter" class="list-group-item category" @click="findProductsByCategoryIdAction(category._id)"> {{ category.nameRo }} </div>
     </div>
   </div>
@@ -28,6 +28,7 @@ export default {
   ]),
   methods: mapActions([
     'getAllCategoriesAction',
+    'getAllProductsAction',
     'findProductsByCategoryIdAction'
   ]),
   mounted () {
