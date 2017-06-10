@@ -1,7 +1,9 @@
 <template lang="html">
   <div id="header">
     <div class="container header">
-      <img src="../assets/images/sim-logo.png" alt="" id="logo">
+      <router-link to="/">
+        <img src="../assets/images/sim-logo.png" alt="" id="logo">
+      </router-link>
       <div id="phone-section">
         <div id="phone-number">
           <img src="../assets/images/phone-icon.png" alt="" id="phone-icon">
@@ -11,12 +13,12 @@
           (069) 149-730 (079) 149-730
         </div>
       </div>
-      <a href="contacts.html">
+      <router-link to="/contacts">
         <div id="contacte">
           <img src="../assets/images/pin.png" alt="" id="pin">
           Contacte
         </div>
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
